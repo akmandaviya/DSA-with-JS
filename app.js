@@ -93,3 +93,25 @@ for (let i=0; i<array.length; i++)  {
     }
 }
 
+//sorting
+let unsortedArr = [2,5,6,8,1,10,12,4,20]
+
+//using sort()
+let sortedArr1 = unsortedArr.sort((x,y) => x-y)
+let sortedArr2 = unsortedArr.sort((x,y) => y-x)
+console.log(sortedArr1)
+console.log(sortedArr2)
+
+//simple 2 loops
+for(let i=0; i<unsortedArr.length-1; i++) { 
+    for(let j=0; j<unsortedArr.length-i+1; j++)  { 
+        //for descending  <
+        if(unsortedArr[j] > unsortedArr[j+1]) { 
+            let temp = unsortedArr[j]
+            unsortedArr[j] = unsortedArr[j+1]
+            unsortedArr[j+1] = temp
+        }
+    }
+}
+console.log(unsortedArr)
+
