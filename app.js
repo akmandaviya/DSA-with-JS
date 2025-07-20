@@ -1,0 +1,82 @@
+//palindrome
+let num = 121
+let reversed = num.toString().split('').reverse().join('')
+if(num === reversed)  { 
+    console.log(num, 'is palindrome of ', reversed)
+}
+
+
+// searching algorithm, only works on sorted array
+let arr = [1,2,3,4,5,6,7,8]
+let target = 5
+let found = false
+
+// linear search 1D  ------> O(n)
+for(let i=0; i<arr.length;i++) { 
+    if(arr[i] === target) { 
+        found = true
+        console.log(target, 'found at', i, 'index')
+    }
+}
+
+if(!found) { 
+    console.log(target, 'not found')   
+}
+
+// linear search 2D ---------> O(nm)
+let matrix = [ 
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+]
+
+let target1 = 6
+let flag = false
+
+for(let i=0; i<matrix.length; i++) {
+    for(let j=0; j<matrix[i].length; j++) {
+        if(matrix[i][j] === target1) { 
+            flag = true
+            console.log(target1, 'is at', i,j )
+        }
+    }
+} 
+
+if(!flag) {
+console.log(target1, 'is not in 2d array')
+} 
+
+// binary search ------> O(logn)
+let a = [1,2,3,4,5,6]
+let b = 5
+
+let left = 0
+let right = a.length-1
+let x = false
+
+while(left <= right) { 
+    let mid = Math.floor((left+right)/2)
+    
+    if(a[mid] === b) {
+        x = true
+        console.log(5, 'is the index of', 4)
+         break
+    }else if (a[mid] < b) { 
+        left = mid + 1
+    }
+    else { 
+        right = mid - 1
+    }
+}
+
+if(!x)  { 
+    console.log(b, 'is not found in given array')
+}
+
+//duplicates in a sorted array
+let nums = [1,1,2,2,2,4,5,6,7,7,8]
+let unique = [...new Set(nums)]
+console.log(unique)
+
+// 
+
