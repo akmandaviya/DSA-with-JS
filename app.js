@@ -113,5 +113,49 @@ for(let i=0; i<unsortedArr.length-1; i++) {
         }
     }
 }
-console.log(unsortedArr)
+console.log(unsortedArr,'simple sort')
+
+//bubble sort // sinking sort // excahnge sort
+// best case O(N) worst case o(Nsqaure)
+let swapped = false
+for(let i=0; i<unsortedArr.length; i++) { 
+    swapped = false
+    for( let j=1; j<unsortedArr.length-i ; j++) { 
+        if(unsortedArr[i] < unsortedArr[i-1]) {
+            swapped = true
+            let temp = unsortedArr[i]
+            unsortedArr[i] = unsortedArr[i-1]
+            unsortedArr[i-1] = temp
+        }
+        if(!swapped) break
+    }
+}
+console.log(unsortedArr, "sort from bubble sort")
+
+//selection sort // O(nsquare)
+// here we are selecting and adding max element at the end
+//we are decreasing the size of sub array
+for( let i=0; i<unsortedArr.length; i++) { 
+    let lastIndex = unsortedArr.length - i - 1
+    let maxElementIndex = getMax(unsortedArr, lastIndex)
+    let temp = unsortedArr[maxElementIndex]
+    unsortedArr[maxElementIndex] = unsortedArr[lastIndex]
+    unsortedArr[lastIndex] = temp  
+}
+
+console.log(unsortedArr, 'sorting from selection sort')
+
+function getMax(arr, index) { 
+    let max = 0 
+    for (let i=0; i<=index; i++) { 
+        if(arr[i] > arr[max]) { 
+            max = i
+        }
+    }
+    return max
+}
+
+//insertion sort 
+//here we are taking first 2 elements ,sorting and moving to first 3 sorting and moving ahead in this way, 
+//we are increasing the size of subarray
 
