@@ -1,8 +1,8 @@
 //palindrome
 let num = 121
 let reversed = num.toString().split('').reverse().join('')
-if(num === reversed)  { 
-    console.log(num, 'is palindrome of ', reversed)
+if(num === parseInt(reversed))  { 
+    console.log(num, 'is palindrome of ', parseInt(reversed))
 }
 
 
@@ -78,5 +78,18 @@ let nums = [1,1,2,2,2,4,5,6,7,7,8]
 let unique = [...new Set(nums)]
 console.log(unique)
 
-// 
+// two sum, with count of the pairs having 2 sum
+let array = [1,2,3,4,5,6]
+let k = 5
+let counter = []
+
+for (let i=0; i<array.length; i++)  { 
+    for( j=i+1; j<array.length; j++) {
+          if (array[i] + array[j] === k) {  
+        counter.push([i,j])
+        console.log([i,j])
+        console.log(counter.length, 'count of pairs')
+    }
+    }
+}
 
