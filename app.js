@@ -159,3 +159,15 @@ function getMax(arr, index) {
 //here we are taking first 2 elements ,sorting and moving to first 3 sorting and moving ahead in this way, 
 //we are increasing the size of subarray
 
+for( let i=0; i<unsortedArr.length-1; i++) { 
+    for( let j= i+1; j>0; j--) { 
+        if(unsortedArr[i] < unsortedArr[i-1]) { 
+            let temp = unsortedArr[i]
+            unsortedArr[i] = unsortedArr[i-1]
+            unsortedArr[i-1] = temp
+        }
+    }
+}
+
+console.log(unsortedArr, "sort from insertion")
+
