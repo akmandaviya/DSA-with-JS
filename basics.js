@@ -144,6 +144,38 @@ console.log(nested.flat(2), 'flat'); // [1, 2, 3]
 "hello".toUpperCase(); // "HELLO"
 "WORLD".toLowerCase(); // "world"
 
+//replace()
+"JS is cool".replace("cool", "awesome"); // "JS is awesome"
+
+//trim()
+"  spaced  ".trim(); // "spaced"
+
+// Object methods
+const user = { name: "Ali", age: 25 };
+console.log(Object.keys(user)); // ["name", "age"]
+console.log(Object.values(user)); // ["Ali", 25]
+console.log(Object.entries(user)); // [["name", "Ali"], ["age", 25]]
+const a = { x: 1 };
+const b = { y: 2 };
+const c = Object.assign({}, a, b);
+console.log(c); // { x: 1, y: 2 }
+
+//Type conversion
+Number("42"); // 42
+String(123);  // "123"
+Boolean(0);   // false
+
+// parseInt() / parseFloat()
+parseInt("100px"); // 100
+parseFloat("3.14"); // 3.14
+
+
+//const now = new Date();
+console.log(now.toString());
+now.getFullYear(); // 2025
+now.getMonth();    // 0–11 (Jan = 0)
+now.getDate();     // 1–31
+
 
 // promises
 const data = [
