@@ -81,6 +81,18 @@ fruits.forEach((item,index) => {
 console.log(`${index + 1}. ${item}`, 'for each')
 })
 
+//for...in ->  Iterates over object keys
+const obj = { name: "Ali", age: 25 };
+for(let key in user) {
+    console.log(`${key}, ${obj[key]}`)
+}
+
+//for...of ->  works on iterables, arrays
+const iterable = [1,23,54,5,6,8,5,9]
+for(let item of iterable) {
+    console.log(item)
+}
+
 //find
 const users = [
   { id:1 ,name: 'anil', age: 10 },
