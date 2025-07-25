@@ -212,3 +212,21 @@ getData().then((response) => {
 }).catch((error) => {
     console.log(error)
 })
+
+// event bubbling and capturing
+document.querySelector('#catergory').addEventListener('click', ()=> { 
+    console.log('grand parent clicked')
+})
+
+document.querySelector('#list').addEventListener('click', ()=> { 
+    console.log('parent clicked')
+})
+
+document.querySelector('#laptops').addEventListener('click', ()=> { 
+    console.log('child laptop clicked')
+})
+
+//event delegation
+document.querySelector('#catergory'.addEventListener('click', (e) => { 
+    console.log(e.target)
+}))
