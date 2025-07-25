@@ -252,3 +252,16 @@ printName.apply(nm1, ['Mumbai', 'Maharashtra'])
 // bind
 let myData = printName.bind(nm, 'Gondal', 'Gujarat') // bind returns a callback funcation which can be called when we need
 myData()
+
+// polyfills
+//implmenting polyfills for bind
+Function.prototype.myBind = function (...data) { 
+    let obj = this
+    params = data.slice(1)
+    return function() { 
+        obj.apply(data[0], params)
+    }
+}
+
+let myDataAgain = printName.myBind(nm, 'Gondal', 'Gujarat')
+myDataAgain()
