@@ -212,3 +212,43 @@ getData().then((response) => {
 }).catch((error) => {
     console.log(error)
 })
+
+//currying
+function mutliply(a) { 
+    return function(b) { 
+        return function(c) { 
+            return a*b*c
+        }
+    }
+}
+
+console.log(mutliply(1)(2)(3), 'without currying')
+
+const mutliply1 = a => b => c => a*b*c
+console.log(mutliply1(1)(2)(3), 'with currying')
+
+//call apply bind
+function printName (hometown, state) { 
+    console.log(this.firstName +' '+ this.lastName +' '+ hometown+' '+state)
+}
+
+let nm = {
+    firstName: 'Abdul',
+    lastName: 'Karim'
+}
+
+printName.call(nm, 'Gondal', 'Gujarat') // strings
+printName.apply(nm, ['Gondal', 'Gujarat']) // arraylist
+
+let nm1 = { 
+    firstName: 'Emran',
+    lastName: 'Ansari'
+}
+
+// functional borrowing using call
+printName.call(nm1, 'Mumbai', 'Maharashtra')
+printName.apply(nm1, ['Mumbai', 'Maharashtra'])
+
+// bind
+let myData = printName.bind(nm, 'Gondal', 'Gujarat') // bind returns a callback funcation which can be called when we need
+myData()

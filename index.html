@@ -15,7 +15,7 @@
     </div>
 
     <div>
-        <input type="text">
+        <input type="text" id="inputbox">
     </div>
     <script>
         //event bubbling -> flag true, event capturing -> flag false
@@ -35,6 +35,18 @@
         document.querySelector('#category').addEventListener('click', (e) => {
             console.log(e.target)
         })
+
+        //debouncing
+        let countNum = 0
+        let debounceTimer = 0
+        const fetchData = (e) => {
+            clearTimeout(debounceTimer)
+            debounceTimer = setTimeout(() => {
+                console.log(e.target.value, 'fetched', countNum++)
+            },3000)
+        }
+
+        document.querySelector('#inputbox').addEventListener('keyup', fetchData)
 
     </script>
     <script src="./app.js"></script>
