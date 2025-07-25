@@ -83,7 +83,7 @@ console.log(`${index + 1}. ${item}`, 'for each')
 
 //for...in ->  Iterates over object keys
 const obj = { name: "Ali", age: 25 };
-for(let key in user) {
+for(let key in obj) {
     console.log(`${key}, ${obj[key]}`)
 }
 
@@ -167,9 +167,9 @@ const user = { name: "Ali", age: 25 };
 console.log(Object.keys(user)); // ["name", "age"]
 console.log(Object.values(user)); // ["Ali", 25]
 console.log(Object.entries(user)); // [["name", "Ali"], ["age", 25]]
-const a = { x: 1 };
-const b = { y: 2 };
-const c = Object.assign({}, a, b);
+const ab = { x: 1 };
+const bc = { y: 2 };
+const c = Object.assign({}, ab, bc);
 console.log(c); // { x: 1, y: 2 }
 
 //Type conversion
@@ -181,8 +181,8 @@ Boolean(0);   // false
 parseInt("100px"); // 100
 parseFloat("3.14"); // 3.14
 
-
-//const now = new Date();
+// date
+const now = new Date();
 console.log(now.toString());
 now.getFullYear(); // 2025
 now.getMonth();    // 0–11 (Jan = 0)
@@ -212,21 +212,3 @@ getData().then((response) => {
 }).catch((error) => {
     console.log(error)
 })
-
-// event bubbling and capturing
-document.querySelector('#catergory').addEventListener('click', ()=> { 
-    console.log('grand parent clicked')
-})
-
-document.querySelector('#list').addEventListener('click', ()=> { 
-    console.log('parent clicked')
-})
-
-document.querySelector('#laptops').addEventListener('click', ()=> { 
-    console.log('child laptop clicked')
-})
-
-//event delegation
-document.querySelector('#catergory'.addEventListener('click', (e) => { 
-    console.log(e.target)
-}))

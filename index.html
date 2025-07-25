@@ -1,18 +1,44 @@
 <html>
-    <head>
-        <title>Practice DSA in JS</title>
-        <link rel="stylesheet" href="./style.css">
-    </head>
-    <body>
-        <div id="catergory">
-       <ul id="list">
+
+<head>
+    <title>Practice DSA in JS</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div id="category">
+        <ul id="list">
             <li id="laptops">laptop</li>
             <li id="camera">camera</li>
             <li id="TV">T.V</li>
         </ul>
-        </div>
- 
-        <script src="./app.js"></script>
-        <script src="./basics.js"></script>
-    </body>
+    </div>
+
+    <div>
+        <input type="text">
+    </div>
+    <script>
+        //event bubbling -> flag true, event capturing -> flag false
+        document.querySelector('#category').addEventListener('click', () => {
+            console.log('grand parent clicked');
+        });
+
+        document.querySelector('#list').addEventListener('click', () => {
+            console.log('parent clicked');
+        });
+
+        document.querySelector('#laptops').addEventListener('click', () => {
+            console.log('child laptop clicked');
+        });
+
+        //event delegation
+        document.querySelector('#category').addEventListener('click', (e) => {
+            console.log(e.target)
+        })
+
+    </script>
+    <script src="./app.js"></script>
+    <script src="./basics.js"></script>
+</body>
+
 </html>
